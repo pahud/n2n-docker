@@ -2,7 +2,21 @@
 
 [n2n](https://web.archive.org/web/20110924083045/http://www.ntop.org:80/products/n2n/) is is a **Layer two Peer-to-Peer VPN** created by the [ntop team](http://www.ntop.org/) with very good NAT-friendly support. n2n-docker is a docker wrapping of it.
 
-# start supernode
+
+
+# Diagram
+
+
+
+![](https://web.archive.org/web/20110924083045im_/http://www.ntop.org/wp-content/uploads/2011/08/n2n_network.png)
+
+
+
+![](https://web.archive.org/web/20110924083045im_/http://www.ntop.org/wp-content/uploads/2011/08/n2n_com.png)
+
+
+
+# Howto - start supernode
 
 ```
 // foreground mode
@@ -15,7 +29,7 @@ docker run -d --privileged --net=host -p 53/udp --name n2n_supernode pahud/n2n-d
 
 
 
-# start edge
+# Howto - start edge
 
 ```
 // foreground mode
