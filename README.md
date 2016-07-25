@@ -28,7 +28,7 @@ docker run -d --privileged --net=host --name n2n_edge pahud/n2n-docker edge -d n
 
 
 
-## building n2n between GCP(Google Cloud Platform) and AWS
+## building n2n network for GCP(Google Cloud Platform),  AWS and Aliyun
 
 make sure **GCP networks->Firewall rules** has **up:53** open to **0.0.0.0/0** 
 (you may specify AWS source IP addresses later)
@@ -111,5 +111,17 @@ Connected to 10.9.9.1.
 Escape character is '^]'.
 SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.7
 ```
+
+
+
+### create 3rd edge in Aliyun
+
+```
+docker run -d --privileged  --net=host  pahud/n2n-docker  edge -d n2n0 -a 10.9.9.3 -c mypbxnet -k mypass -l <public_ip_of_supernode>:53 -f
+```
+
+and you will be able to ping 10.9.9.1 and 10.9.9.2 from AliYun instance.
+
+Finally, you have a n2n network among **GCP(10.9.9.1)**, **AWS(10.9.9.2)** and **Aliyun(10.9.9.3)**
 
 It is also possible to route traffic through n2n to GCP out but may require some iptables rules. Let me know if you have made it.
