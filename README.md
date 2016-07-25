@@ -112,5 +112,4 @@ Escape character is '^]'.
 SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.7
 ```
 
-Have Fun!
-
+It is also possible to route traffic through n2n to GCP out but may require some iptables rules. Let me know if you have made it.
