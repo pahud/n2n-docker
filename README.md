@@ -58,7 +58,7 @@ make sure **GCP networks->Firewall rules** has **up:53** open to **0.0.0.0/0**
 docker run -d --privileged --name=n2n_supernode --net=host -p 53/udp pahud/n2n-docker supernode -l 53 -f
 
 // create 1st edge in the same host with supernode
-docker run -d --privileged --name=n2n_edge01 --net=host pahud/n2n-docker  edge -d n2n0 -a 10.9.9.1 -c mypbxnet -k mypass -l <my_public_ip_address>:53 -f
+docker run -d --privileged --name=n2n_edge --net=host pahud/n2n-docker  edge -d n2n0 -a 10.9.9.1 -c mypbxnet -k mypass -l <my_public_ip_address>:53 -f
 ```
 
 you should see this with `docker ps` in the GCP supernode
@@ -94,7 +94,7 @@ SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.7
 ### create 2nd edge in AWS
 
 ```
-docker run -d --privileged  --net=host  pahud/n2n-docker  edge -d n2n0 -a 10.9.9.2 -c mypbxnet -k mypass -l <public_ip_of_supernode>:53 -f
+docker run -d --privileged -name=n2n_edge --net=host  pahud/n2n-docker  edge -d n2n0 -a 10.9.9.2 -c mypbxnet -k mypass -l <public_ip_of_supernode>:53 -f
 ```
 
 - please note we specify 10.9.9.2 as the n2n private IP in the 2nd edge
@@ -135,7 +135,7 @@ SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.7
 ### create 3rd edge in Aliyun
 
 ```
-docker run -d --privileged  --net=host  pahud/n2n-docker  edge -d n2n0 -a 10.9.9.3 -c mypbxnet -k mypass -l <public_ip_of_supernode>:53 -f
+docker run -d --privileged  -name=n2n_edge --net=host  pahud/n2n-docker  edge -d n2n0 -a 10.9.9.3 -c mypbxnet -k mypass -l <public_ip_of_supernode>:53 -f
 ```
 
 and you will be able to ping 10.9.9.1 and 10.9.9.2 from AliYun instance.
