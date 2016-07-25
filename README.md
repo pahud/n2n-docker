@@ -1,6 +1,6 @@
 # About
 
-[n2n](https://web.archive.org/web/20110924083045/http://www.ntop.org:80/products/n2n/) is is a **Layer two Peer-to-Peer VPN** created by the [ntop team](http://www.ntop.org/) and n2n-docker is a dockder wrapping of it.
+[n2n](https://web.archive.org/web/20110924083045/http://www.ntop.org:80/products/n2n/) is is a **Layer two Peer-to-Peer VPN** created by the [ntop team](http://www.ntop.org/) with very good NAT-friendly support. n2n-docker is a docker wrapping of it.
 
 # start supernode
 
