@@ -49,7 +49,7 @@ docker run -d --privileged --net=host --name n2n_edge pahud/n2n-docker edge -d n
 ## building n2n network for GCP(Google Cloud Platform),  AWS and Aliyun
 
 make sure **GCP networks->Firewall rules** has **up:53** open to **0.0.0.0/0** 
-(you may specify AWS source IP addresses later)
+(you may specify some source IP addresses later)
 
 ### create supernode and 1st edge in GCP
 
